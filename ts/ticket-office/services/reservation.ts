@@ -20,7 +20,7 @@ export class ReservationService {
     // TODO: do not hard-code coach number
     const availableSeats = seatsInTrain
       .filter((s) => s.coach === "A")
-      .filter((s) => !s.booking_reference);
+      .filter((s) => !s.booking_reference); // BUG: Empty = ""
 
     // Step 4: make reservation
     const toReserve = availableSeats.slice(0, seatCount);
