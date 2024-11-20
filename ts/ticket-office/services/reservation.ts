@@ -2,7 +2,7 @@ import { Reservation } from "../interfaces/trainData";
 import { BookingReferenceService } from "../services/bookingReference";
 import { TrainDataService } from "../services/trainData";
 
-export class ReservationController {
+export class ReservationService {
   constructor(
     private bookingReferenceService: BookingReferenceService,
     private trainDataService: TrainDataService
@@ -32,5 +32,7 @@ export class ReservationController {
     };
 
     await this.trainDataService.reserveSeatsInTrain(reservation);
+
+    return reservation;
   }
 }
